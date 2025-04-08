@@ -243,11 +243,11 @@ def test_parallel_udo():
     try:
         # Run UDO method in both parallel and serial
         subprocess.run(
-            ["python", script_path_str, "--refinements", "2", "--runtime", "serial"],
+            ["python3", script_path_str, "--refinements", "2", "--runtime", "serial"],
             check=True
         )
         subprocess.run(
-            ["mpiexec", "-n", "4", "python", script_path_str,
+            ["mpiexec", "-n", "4", "python3", script_path_str,
              "--refinements", "2", "--runtime", "parallel"],
             check=True
         )
